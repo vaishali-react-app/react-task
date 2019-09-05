@@ -3,12 +3,12 @@ import './App.css';
 // import Slider from './component/Slider/Slider';
 import TextFieldBox from "./pages/TextField/TextField";
 import { MuiThemeProvider } from '@material-ui/core';
- import {NavBar} from './component'
 import Login from './pages/Login';
 import AuthRoute from './pages/Routes/AuthRoute';
 import PrivateRoute from './pages/Routes/PrivateRoute';
 import NoMatch from '../src/component/NotFound';
 import { BrowserRouter as Router, Route, Link, Match, Redirect, Switch } from 'react-router-dom'
+import Trainee from './pages/Trainee/Trainee';
 
 
 class App extends Component {
@@ -18,21 +18,21 @@ class App extends Component {
         
         <Router>
           <Switch>
-            <AuthRoute
-              component={TextFieldBox}
-              exact path="/"
-            />
-            <AuthRoute
-              component={NoMatch}
-            />
-            <PrivateRoute
+          <PrivateRoute
               component={Login}
               path="/login"
             />
-            {/* <AuthRoute
+            <AuthRoute
+              component={Trainee}
+              exact path="/"
+            />
+            <AuthRoute
+              component={TextFieldBox}
+              exact path="/text-field"
+            />
+            <AuthRoute
               component={NoMatch}
             />
-            <noMatch /> */}
           </Switch>
         </Router>
       </MuiThemeProvider>

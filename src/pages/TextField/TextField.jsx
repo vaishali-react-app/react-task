@@ -68,6 +68,10 @@ class TextFieldBox extends Component {
         this.handleValidate();
         console.log("sdcsdcsdcsdcsdcsdc");
     }
+    handleSubmit = () => {
+        const { inputvalue } = this.state;
+        alert(`Fill the input correct: ${inputvalue}`);
+      };
     render() {
         const { inputvalue, error } = this.state;
         console.log("render error", error);
@@ -75,7 +79,7 @@ class TextFieldBox extends Component {
             
             <>
             <div>
-            <form onSubmit={this.handleClick}>
+            <form onSubmit={this.handleSubmit}>
                     <TextField
                         value={inputvalue}
                         handleChange={ this.handleChange('inputvalue')}
@@ -95,10 +99,11 @@ class TextFieldBox extends Component {
                             ]
 
                         } />
-                </form>
-                <Button
+                        <Button
                 // value="bvalue" 
                 >Submit</Button>
+                </form>
+                
             </div>
             </>
         )

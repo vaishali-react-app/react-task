@@ -4,22 +4,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import TypoGraphy from '@material-ui/core/Typography'
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar'
-import { Redirect } from 'react-router-dom'
+import Toolbar from '@material-ui/core/Toolbar';
+import { Link } from 'react-router-dom';
 
 
 class NavBar extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state={}
-    }
-
-    homeRedirect = () => {
-        console.log('home');
-        return <Redirect to='/home' />
-        
-    }
 
     render() {
         return (
@@ -28,23 +17,23 @@ class NavBar extends Component {
                   <img src="../images/logo.png" alt="logo" />
               <List>
                 <ListItem>
-                    <ListItemText inset onClick={this.homeRedirect}>
-                        <TypoGraphy color="inherit" variant="title">
-                            Home
+                    <ListItemText inset>
+                   <TypoGraphy color="inherit" variant="title">
+                           <Link to="/">Add Trainee</Link>
                    </TypoGraphy>
                     </ListItemText>
     
     
                     <ListItemText inset>
                         <TypoGraphy color="inherit" variant="title">
-                            Posts
+                            <Link to="/text-field">Text Field </Link>
                    </TypoGraphy>
                     </ListItemText>
     
     
                     <ListItemText inset>
                         <TypoGraphy color="inherit" variant="title">
-                            Contact
+                            <Link to="/login">Login</Link>
                    </TypoGraphy>
                     </ListItemText>
                 </ListItem >
